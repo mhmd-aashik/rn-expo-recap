@@ -7,7 +7,10 @@ export default function App() {
 
   return (
     <View style={styles.container}>
-      <Pressable style={styles.button} onPress={handlePress}>
+      <Pressable
+        style={({ pressed }) => [styles.button, pressed && styles.pressed]}
+        onPress={handlePress}
+      >
         <Text style={styles.buttonText}>Press Me</Text>
       </Pressable>
     </View>
@@ -30,5 +33,9 @@ const styles = StyleSheet.create({
   buttonText: {
     color: "white",
     textAlign: "center",
+  },
+
+  pressed: {
+    opacity: 0.6,
   },
 });
