@@ -1,35 +1,35 @@
-import { FlatList, StyleSheet, Text, View } from "react-native";
-import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
+import { useState } from "react";
 
-const users = [
-  { id: "1", name: "John" },
-  { id: "2", name: "David" },
-  { id: "3", name: "Sarah" },
-];
+import { StyleSheet, Text, TextInput, View } from "react-native";
 
 export default function App() {
+  const [name, setName] = useState("");
+
   return (
-    <SafeAreaProvider>
-      <SafeAreaView style={styles.container}>
-        <FlatList
-          data={users}
-          keyExtractor={(item) => item.id}
-          renderItem={({ item }) => (
-            <Text style={styles.item}>{item.name}</Text>
-          )}
-        />
-      </SafeAreaView>
-    </SafeAreaProvider>
+    <View style={styles.container}>
+      <TextInput
+        value={name}
+        onChangeText={setName}
+        placeholder="Enter your name"
+        style={styles.input}
+      />
+
+      <Text>Hello {name}</Text>
+    </View>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    padding: 20,
+    paddingTop: 80,
+    padding: 40,
   },
 
-  item: {
-    padding: 15,
+  input: {
+    borderWidth: 1,
+    borderColor: "#999",
+    padding: 12,
+    borderRadius: 8,
   },
 });
