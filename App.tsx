@@ -3,9 +3,9 @@ import { StyleSheet, Text, View } from "react-native";
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text>React</Text>
-      <Text>React Native</Text>
-      <Text>Expo</Text>
+      <View style={styles.box}>
+        <Text>Box</Text>
+      </View>
     </View>
   );
 }
@@ -14,6 +14,12 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     padding: 20,
-    gap: 15,
   },
+
+  box: {
+    width: 100,
+    height: 100,
+    backgroundColor: 'lightblue',
+    borderRadius: 20,
+  }
 });
