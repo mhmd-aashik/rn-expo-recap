@@ -3,9 +3,9 @@ import { StyleSheet, Text, View } from "react-native";
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text>One</Text>
-      <Text>Two</Text>
-      <Text>Three</Text>
+      <Text>React</Text>
+      <Text>React Native</Text>
+      <Text>Expo</Text>
     </View>
   );
 }
@@ -13,6 +13,7 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: "flex-start",
+    padding: 20,
+    gap: 15,
   },
 });
