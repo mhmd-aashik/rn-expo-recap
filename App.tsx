@@ -1,22 +1,23 @@
 import { useState } from "react";
-import { ActivityIndicator, Pressable, Text, View } from "react-native";
+import { StyleSheet, Switch, Text, View } from "react-native";
 
 export default function App() {
-  const [loading, setLoading] = useState(false);
-
-  const handleLogin = () => {
-    setLoading(true);
-  };
+  const [enabled, setEnabled] = useState(false);
 
   return (
-    <View
-      style={{
-        padding: 50,
-      }}
-    >
-      <Pressable onPress={handleLogin}>
-        {loading ? <ActivityIndicator /> : <Text>Login</Text>}
-      </Pressable>
+    <View style={styles.container}>
+      <Text>Notifications</Text>
+
+      <Switch value={enabled} onValueChange={setEnabled} />
+
+      <Text>{enabled ? "Enabled" : "Disabled"}</Text>
     </View>
   );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    padding: 20,
+  },
+});
