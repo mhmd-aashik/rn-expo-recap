@@ -1,12 +1,13 @@
-import { Text, useWindowDimensions, View } from "react-native";
+import { Button, useWindowDimensions, View } from "react-native";
 
 export default function App() {
-  const { width, height } = useWindowDimensions();
-
   return (
-    <View>
-      <Text>Width: {width}</Text>
-      <Text>Height: {height}</Text>
+    <View
+      style={{
+        padding: 50,
+      }}
+    >
+      <Button title="Login" onPress={() => console.log("Login")} />
     </View>
   );
 }
