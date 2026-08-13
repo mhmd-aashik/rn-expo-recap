@@ -6,6 +6,7 @@ export default function App() {
       <ScrollView
         style={styles.container}
         contentContainerStyle={styles.content}
+        showsVerticalScrollIndicator={false}
       >
         <View style={styles.box}>
           <Text>Box 1</Text>
