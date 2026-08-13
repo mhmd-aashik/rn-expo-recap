@@ -8,6 +8,7 @@ export default function App() {
           uri: "https://picsum.photos/300",
         }}
         style={styles.image}
+        resizeMode="cover"
       />
     </View>
   );
