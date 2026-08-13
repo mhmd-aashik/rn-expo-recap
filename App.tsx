@@ -1,11 +1,15 @@
-import { StyleSheet, Text, View } from "react-native";
+import { Pressable, StyleSheet, Text, View } from "react-native";
 
 export default function App() {
+  const handlePress = () => {
+    console.log("Button pressed");
+  };
+
   return (
     <View style={styles.container}>
-      <View style={styles.box}>
-        <Text>Box</Text>
-      </View>
+      <Pressable style={styles.button} onPress={handlePress}>
+        <Text style={styles.buttonText}>Press Me</Text>
+      </Pressable>
     </View>
   );
 }
@@ -13,13 +17,18 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    justifyContent: "center",
     padding: 20,
   },
 
-  box: {
-    width: 100,
-    height: 100,
-    backgroundColor: 'lightblue',
-    borderRadius: 20,
-  }
+  button: {
+    backgroundColor: "black",
+    padding: 15,
+    borderRadius: 10,
+  },
+
+  buttonText: {
+    color: "white",
+    textAlign: "center",
+  },
 });
