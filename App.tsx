@@ -1,34 +1,17 @@
-import {
-  KeyboardAvoidingView,
-  Platform,
-  StyleSheet,
-  TextInput,
-} from 'react-native';
+import { ActivityIndicator, StyleSheet, View } from "react-native";
 
 export default function App() {
   return (
-    <KeyboardAvoidingView
-      style={styles.container}
-      behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
-    >
-      <TextInput
-        style={styles.input}
-        placeholder="Enter your name"
-      />
-    </KeyboardAvoidingView>
+    <View style={styles.container}>
+      <ActivityIndicator size="large" />
+    </View>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'flex-end',
-    padding: 20,
-  },
-
-  input: {
-    borderWidth: 1,
-    padding: 12,
-    borderRadius: 8,
+    justifyContent: "center",
+    alignItems: "center",
   },
 });
